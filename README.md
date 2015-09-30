@@ -1,0 +1,2 @@
+# WasabiCoreData
+CoreData extensions
