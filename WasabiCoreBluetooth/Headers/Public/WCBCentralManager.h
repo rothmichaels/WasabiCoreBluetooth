@@ -110,6 +110,8 @@
 
 - (void)centralManagerDidUpdateState:(WCBCentralManager *)central;
 
+@optional
+
 - (void)centralManager:(WCBCentralManager *)central willRestoreState:(NSDictionary *)dict;
 
 - (void)centralManager:(WCBCentralManager *)central didRetrievePeripherals:(NSArray *)peripherals;
