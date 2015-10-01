@@ -10,6 +10,7 @@
 		1F42338B1BBCF6640073DCAD /* WCBCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4233881BBCF6640073DCAD /* WCBCentralManager.m */; settings = {ASSET_TAGS = (); }; };
 		1F42338C1BBCF6640073DCAD /* WCBCentralNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */; settings = {ASSET_TAGS = (); }; };
 		1F42338D1BBCF6640073DCAD /* WCBCentralNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */; settings = {ASSET_TAGS = (); }; };
+		1F4233941BBD01200073DCAD /* WCBCentralManagerCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4233931BBD01200073DCAD /* WCBCentralManagerCoordinator.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		1F4233651BBCF5910073DCAD /* libWasabiCoreBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWasabiCoreBluetooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F4233821BBCF6640073DCAD /* WCBCentralManager_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralManager_Private.h; sourceTree = "<group>"; };
 		1F4233841BBCF6640073DCAD /* WasabiCoreBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WasabiCoreBluetooth.h; sourceTree = "<group>"; };
 		1F4233851BBCF6640073DCAD /* WCBCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralManager.h; sourceTree = "<group>"; };
 		1F4233861BBCF6640073DCAD /* WCBCentralNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotificationCenter.h; sourceTree = "<group>"; };
@@ -34,6 +34,8 @@
 		1F4233881BBCF6640073DCAD /* WCBCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralManager.m; sourceTree = "<group>"; };
 		1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralNotificationCenter.m; sourceTree = "<group>"; };
 		1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralNotifications.m; sourceTree = "<group>"; };
+		1F4233921BBD00E70073DCAD /* WCBCentralManagerCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCBCentralManagerCoordinator.h; sourceTree = "<group>"; };
+		1F4233931BBD01200073DCAD /* WCBCentralManagerCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralManagerCoordinator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				1F4233881BBCF6640073DCAD /* WCBCentralManager.m */,
 				1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */,
 				1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */,
+				1F4233931BBD01200073DCAD /* WCBCentralManagerCoordinator.m */,
 			);
 			path = WasabiCoreBluetooth;
 			sourceTree = "<group>";
@@ -86,7 +89,7 @@
 		1F4233811BBCF6640073DCAD /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				1F4233821BBCF6640073DCAD /* WCBCentralManager_Private.h */,
+				1F4233921BBD00E70073DCAD /* WCBCentralManagerCoordinator.h */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				1F42338D1BBCF6640073DCAD /* WCBCentralNotifications.m in Sources */,
 				1F42338C1BBCF6640073DCAD /* WCBCentralNotificationCenter.m in Sources */,
 				1F42338B1BBCF6640073DCAD /* WCBCentralManager.m in Sources */,
+				1F4233941BBD01200073DCAD /* WCBCentralManagerCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +252,7 @@
 		1F42336F1BBCF5910073DCAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "Headers/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -257,6 +262,7 @@
 		1F4233701BBCF5910073DCAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "Headers/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -28,12 +28,45 @@ typedef NS_ENUM(NSUInteger, WCBCentralManagerConcurrencyType) {
     WCBMainQueueConcurrencyType
 };
 
+/*!
+ @class WCBCentralManager
+ @discussion
+    Each instance provides an interface to a CBCentralManager
+    singleton allowing individual instances to monitor
+    their own scan requests.
+ */
 @interface WCBCentralManager : NSObject
 
+/*!
+ @property delegate
+ @discussion The delegate object that will receive central events. 
+ */
 @property (weak,nonatomic) id<WCBCentralManagerDelegate> delegate;
 
-@property (readonly) CBCentralManagerState state;
+/*!
+ @property state
+ @discussion Current BLE Radio Central state.
+ */
+@property (readonly,nonatomic) CBCentralManagerState state;
 
+/*!
+ @property scanning
+ @discussion True if the singleton CBCentralManager is currently scanning.
+ */
+@property (readonly,nonatomic,getter=isScanning) BOOL scanning;
+
+/*!
+ Initialize a WCBCentralManager instance with a specific concurrency 
+ type.  The concurrency type determines the GCD dispatch queue that 
+ WCBCentralManagerDelegate method calls will be performed on.
+ 
+ @param type
+    Concurrency type
+ 
+    WCBBluetoothQueueConcurrencyType    CoreBluetooth background queue
+    WCBBackgroundConcurrencyType        Global current dispatch qeueue
+    WCBMainQueueConcurrencyType         Main thread dispatch queue
+*/
 - (instancetype)initWithConcurrencyType:(WCBCentralManagerConcurrencyType)type NS_DESIGNATED_INITIALIZER;
 
 /*!
@@ -41,11 +74,27 @@ typedef NS_ENUM(NSUInteger, WCBCentralManagerConcurrencyType) {
  */
 - (instancetype)init;
 
-- (NSArray *)retrieveConnectedPeripheralsWithServices:(NSArray *)serviceUUIDs;
+/*!
+ Pause all BLE Peripheral scanning for all requests
+ submitted by WCBBluetoothCentralManager instances.
+ */
++ (void)pauseScan;
+/*!
+ Resume paused BLE Peripheral scanning for all requests
+ submitted by WCBBluetoothCentralManager instances.
+ */
++ (void)resumeScan;
+
+#pragma mark -
+// CBCentralManager forwarded method calls
 
 - (void)scanForPeripheralsWithServices:(NSArray *)serviceUUIDs options:(NSDictionary *)options;
 
 - (void)stopScan;
+
+- (NSArray *)retrievePeripheralsWithIdentifiers:(NSArray *)identifiers;
+
+- (NSArray *)retrieveConnectedPeripheralsWithServices:(NSArray *)serviceUUIDs;
 
 - (void)connectPeripheral:(CBPeripheral *)peripheral options:(NSDictionary *)options;
 
@@ -53,6 +102,12 @@ typedef NS_ENUM(NSUInteger, WCBCentralManagerConcurrencyType) {
 
 @end
 
+/*!
+ @protocol WCBCentralManagerDelegate
+ @discussion
+    Delegate methods triggered by notifications from
+    the singleton CBCentralManager delegate.
+ */
 @protocol WCBCentralManagerDelegate <NSObject>
 
 @required

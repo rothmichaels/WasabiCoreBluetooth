@@ -20,6 +20,12 @@
 
 @import CoreBluetooth;
 
+/*!
+ @class WCBCentralNotificationCenter
+ @discussion
+ CBCentralManagerDelegate implementation that passes calls through
+ NSNotificationCenter to be dispatched to WCBCentralManager instances.
+ */
 @interface WCBCentralNotificationCenter : NSObject<CBCentralManagerDelegate>
 
 @end

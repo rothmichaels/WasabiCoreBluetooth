@@ -18,8 +18,9 @@
 //  limitations under the License.
 //
 
-#import "WCBCentralManager_Private.h"
+#import "WCBCentralManager.h"
 
+#import "WCBCentralManagerCoordinator.h"
 #import "WCBCentralNotifications.h"
 #import "WCBCentralNotificationCenter.h"
 
@@ -29,9 +30,14 @@ typedef void (^NotificationBlock)(NSNotification *);
 
 @interface WCBCentralManager () {
 @private
+    /* Used to dispatch delegate notificaitons to the correct queue. */
     NotificationBlock (^_wrapBlock)(NotificationBlock block);
-    CBCentralManager *_centralManager;
+
+    /* NSNotification observer object references; used when dereferencing delegate. */
     NSMutableSet *_observers;
+    
+    /* CBUUIDs of services being scanned for. */
+    NSArray *_serviceUUIDs;
 }
 
 - (void)unregisterDelegate;
@@ -40,18 +46,6 @@ typedef void (^NotificationBlock)(NSNotification *);
 
 @implementation WCBCentralManager
 
-+ (CBCentralManager *)sharedCentral
-{
-    static CBCentralManager *singleton;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        id<CBCentralManagerDelegate> delegate = [[WCBCentralNotificationCenter alloc] init];
-        dispatch_queue_t queue = dispatch_queue_create("wcb.centralmanager.queue", DISPATCH_QUEUE_SERIAL);
-        NSDictionary *options = nil;
-        singleton = [[CBCentralManager alloc] initWithDelegate:delegate queue:queue options:options];
-    });
-    return singleton;
-}
 
 - (instancetype)initWithConcurrencyType:(WCBCentralManagerConcurrencyType)type
 {
@@ -126,7 +120,7 @@ typedef void (^NotificationBlock)(NSNotification *);
     _delegate = newDelegate;
     if (newDelegate != nil) {
         WCBCentralManager *central = self;
-        id nc = [WCBCentralManager sharedCentral].delegate;
+        id nc = [WCBCentralManagerCoordinator sharedCentral].delegate;
         NSAssert([nc isKindOfClass:[WCBCentralNotificationCenter class]], @"Unexpected CBCentralManagerDelegate class.");
         [self registerDelegateNotification:WCBCNDidUpdateState
                       ifRespondsToSelector:@selector(centralManagerDidUpdateState:)
@@ -211,16 +205,37 @@ typedef void (^NotificationBlock)(NSNotification *);
     [_observers removeAllObjects];
 }
 
+#pragma mark -
+
+- (CBCentralManagerState)state
+{
+    return [WCBCentralManagerCoordinator sharedCentral].state;
+}
+
 #pragma mark - CBCentralManager forwarding
+
+- (void)scanForPeripheralsWithServices:(NSArray *)serviceUUIDs options:(NSDictionary *)options
+{
+    _scanning = YES;
+    [[WCBCentralManagerCoordinator sharedCoordinator] scanForPeripheralsWithServices:serviceUUIDs options:options requestedBy:self];
+}
+
+- (void)stopScan
+{
+    [[WCBCentralManagerCoordinator sharedCoordinator] stopScanRequestedBy:self];
+    _scanning = NO;
+}
+
+#pragma mark -
 
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
-    return [WCBCentralManager sharedCentral];
+    return [WCBCentralManagerCoordinator sharedCentral];
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
-    return [super respondsToSelector:aSelector] || [[WCBCentralManager sharedCentral] respondsToSelector:aSelector];
+    return [super respondsToSelector:aSelector] || [[WCBCentralManagerCoordinator sharedCentral] respondsToSelector:aSelector];
 }
 
 + (BOOL)instancesRespondToSelector:(SEL)aSelector
