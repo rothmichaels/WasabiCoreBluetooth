@@ -18,8 +18,13 @@
 //  limitations under the License.
 //
 
+#ifndef WCBTypes_h
+#define WCBTypes_h
+
 typedef NS_ENUM(NSUInteger, WCBCentralManagerConcurrencyType) {
     WCBBluetoothQueueConcurrencyType = 0,
     WCBBackgroundConcurrencyType,
     WCBMainQueueConcurrencyType
 };
+
+#endif

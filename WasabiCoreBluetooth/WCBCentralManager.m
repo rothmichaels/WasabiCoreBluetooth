@@ -120,7 +120,7 @@ typedef void (^NotificationBlock)(NSNotification *);
     _delegate = newDelegate;
     if (newDelegate != nil) {
         WCBCentralManager *central = self;
-        id nc = [WCBCentralManagerCoordinator sharedCentral].delegate;
+        id nc = [WCBCentralManagerCoordinator sharedCentral];
         NSAssert([nc isKindOfClass:[WCBCentralNotificationCenter class]], @"Unexpected CBCentralManagerDelegate class.");
         [self registerDelegateNotification:WCBCNDidUpdateState
                       ifRespondsToSelector:@selector(centralManagerDidUpdateState:)
