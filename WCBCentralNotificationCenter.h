@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#import <CoreBluetooth/CoreBluetooth.h>
+@import CoreBluetooth;
 
 @interface WCBCentralNotificationCenter : NSObject<CBCentralManagerDelegate>
 

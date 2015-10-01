@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 FOUNDATION_EXPORT NSString * const WCBCNDidUpdateState;
 FOUNDATION_EXPORT NSString * const WCBCNWillRestoreState;
