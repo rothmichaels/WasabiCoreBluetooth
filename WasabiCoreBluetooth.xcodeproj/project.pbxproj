@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0621C01BBD8D06007661CB /* WCBPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0621BF1BBD8D06007661CB /* WCBPeripheral.m */; settings = {ASSET_TAGS = (); }; };
 		1F42338B1BBCF6640073DCAD /* WCBCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4233881BBCF6640073DCAD /* WCBCentralManager.m */; settings = {ASSET_TAGS = (); }; };
 		1F42338C1BBCF6640073DCAD /* WCBCentralNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */; settings = {ASSET_TAGS = (); }; };
 		1F42338D1BBCF6640073DCAD /* WCBCentralNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +30,8 @@
 		1F0621BC1BBD8C2D007661CB /* WCBCentralNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotificationCenter.h; sourceTree = "<group>"; };
 		1F0621BD1BBD8C2D007661CB /* WCBCentralNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotifications.h; sourceTree = "<group>"; };
 		1F0621BE1BBD8C43007661CB /* WCBTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCBTypes.h; sourceTree = "<group>"; };
+		1F0621BF1BBD8D06007661CB /* WCBPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBPeripheral.m; sourceTree = "<group>"; };
+		1F0621C11BBD8D15007661CB /* WCBPeripheral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCBPeripheral.h; sourceTree = "<group>"; };
 		1F4233651BBCF5910073DCAD /* libWasabiCoreBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWasabiCoreBluetooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4233841BBCF6640073DCAD /* WasabiCoreBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WasabiCoreBluetooth.h; sourceTree = "<group>"; };
 		1F4233851BBCF6640073DCAD /* WCBCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralManager.h; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 				1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */,
 				1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */,
 				1F4233931BBD01200073DCAD /* WCBCentralManagerCoordinator.m */,
+				1F0621BF1BBD8D06007661CB /* WCBPeripheral.m */,
 			);
 			path = WasabiCoreBluetooth;
 			sourceTree = "<group>";
@@ -103,6 +107,7 @@
 				1F4233841BBCF6640073DCAD /* WasabiCoreBluetooth.h */,
 				1F4233851BBCF6640073DCAD /* WCBCentralManager.h */,
 				1F0621BE1BBD8C43007661CB /* WCBTypes.h */,
+				1F0621C11BBD8D15007661CB /* WCBPeripheral.h */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F42338D1BBCF6640073DCAD /* WCBCentralNotifications.m in Sources */,
+				1F0621C01BBD8D06007661CB /* WCBPeripheral.m in Sources */,
 				1F42338C1BBCF6640073DCAD /* WCBCentralNotificationCenter.m in Sources */,
 				1F42338B1BBCF6640073DCAD /* WCBCentralManager.m in Sources */,
 				1F4233941BBD01200073DCAD /* WCBCentralManagerCoordinator.m in Sources */,
