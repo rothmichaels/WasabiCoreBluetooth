@@ -1,5 +1,5 @@
 //
-//  WasabiCoreBluetooth.h
+//  WCBTypes.h
 //  WasabiCoreBluetooth
 //
 //  Created by Roth Michaels on 10/1/15.
@@ -18,5 +18,8 @@
 //  limitations under the License.
 //
 
-#import "WCBCentralManager.h"
-
+typedef NS_ENUM(NSUInteger, WCBCentralManagerConcurrencyType) {
+    WCBBluetoothQueueConcurrencyType = 0,
+    WCBBackgroundConcurrencyType,
+    WCBMainQueueConcurrencyType
+};

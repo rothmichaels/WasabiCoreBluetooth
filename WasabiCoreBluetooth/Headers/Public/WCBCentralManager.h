@@ -20,13 +20,9 @@
 
 @import CoreBluetooth;
 
-@protocol WCBCentralManagerDelegate;
+#import "WCBTypes.h"
 
-typedef NS_ENUM(NSUInteger, WCBCentralManagerConcurrencyType) {
-    WCBBluetoothQueueConcurrencyType = 0,
-    WCBBackgroundConcurrencyType,
-    WCBMainQueueConcurrencyType
-};
+@protocol WCBCentralManagerDelegate;
 
 /*!
  @class WCBCentralManager

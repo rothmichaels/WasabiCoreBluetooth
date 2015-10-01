@@ -26,11 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F0621BC1BBD8C2D007661CB /* WCBCentralNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotificationCenter.h; sourceTree = "<group>"; };
+		1F0621BD1BBD8C2D007661CB /* WCBCentralNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotifications.h; sourceTree = "<group>"; };
+		1F0621BE1BBD8C43007661CB /* WCBTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCBTypes.h; sourceTree = "<group>"; };
 		1F4233651BBCF5910073DCAD /* libWasabiCoreBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWasabiCoreBluetooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4233841BBCF6640073DCAD /* WasabiCoreBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WasabiCoreBluetooth.h; sourceTree = "<group>"; };
 		1F4233851BBCF6640073DCAD /* WCBCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralManager.h; sourceTree = "<group>"; };
-		1F4233861BBCF6640073DCAD /* WCBCentralNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotificationCenter.h; sourceTree = "<group>"; };
-		1F4233871BBCF6640073DCAD /* WCBCentralNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotifications.h; sourceTree = "<group>"; };
 		1F4233881BBCF6640073DCAD /* WCBCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralManager.m; sourceTree = "<group>"; };
 		1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralNotificationCenter.m; sourceTree = "<group>"; };
 		1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralNotifications.m; sourceTree = "<group>"; };
@@ -89,6 +90,8 @@
 		1F4233811BBCF6640073DCAD /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				1F0621BC1BBD8C2D007661CB /* WCBCentralNotificationCenter.h */,
+				1F0621BD1BBD8C2D007661CB /* WCBCentralNotifications.h */,
 				1F4233921BBD00E70073DCAD /* WCBCentralManagerCoordinator.h */,
 			);
 			path = Private;
@@ -99,8 +102,7 @@
 			children = (
 				1F4233841BBCF6640073DCAD /* WasabiCoreBluetooth.h */,
 				1F4233851BBCF6640073DCAD /* WCBCentralManager.h */,
-				1F4233861BBCF6640073DCAD /* WCBCentralNotificationCenter.h */,
-				1F4233871BBCF6640073DCAD /* WCBCentralNotifications.h */,
+				1F0621BE1BBD8C43007661CB /* WCBTypes.h */,
 			);
 			path = Public;
 			sourceTree = "<group>";
