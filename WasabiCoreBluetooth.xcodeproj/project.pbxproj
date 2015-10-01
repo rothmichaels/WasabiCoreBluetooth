@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F42338B1BBCF6640073DCAD /* WCBCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4233881BBCF6640073DCAD /* WCBCentralManager.m */; settings = {ASSET_TAGS = (); }; };
+		1F42338C1BBCF6640073DCAD /* WCBCentralNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */; settings = {ASSET_TAGS = (); }; };
+		1F42338D1BBCF6640073DCAD /* WCBCentralNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F4233631BBCF5910073DCAD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1F4233651BBCF5910073DCAD /* libWasabiCoreBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWasabiCoreBluetooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F4233821BBCF6640073DCAD /* WCBCentralManager_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralManager_Private.h; sourceTree = "<group>"; };
+		1F4233841BBCF6640073DCAD /* WasabiCoreBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WasabiCoreBluetooth.h; sourceTree = "<group>"; };
+		1F4233851BBCF6640073DCAD /* WCBCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralManager.h; sourceTree = "<group>"; };
+		1F4233861BBCF6640073DCAD /* WCBCentralNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotificationCenter.h; sourceTree = "<group>"; };
+		1F4233871BBCF6640073DCAD /* WCBCentralNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBCentralNotifications.h; sourceTree = "<group>"; };
+		1F4233881BBCF6640073DCAD /* WCBCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralManager.m; sourceTree = "<group>"; };
+		1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralNotificationCenter.m; sourceTree = "<group>"; };
+		1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBCentralNotifications.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F4233621BBCF5910073DCAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F42335C1BBCF5910073DCAD = {
+			isa = PBXGroup;
+			children = (
+				1F4233671BBCF5910073DCAD /* WasabiCoreBluetooth */,
+				1F4233661BBCF5910073DCAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F4233661BBCF5910073DCAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4233651BBCF5910073DCAD /* libWasabiCoreBluetooth.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4233671BBCF5910073DCAD /* WasabiCoreBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				1F4233801BBCF6640073DCAD /* Headers */,
+				1F4233881BBCF6640073DCAD /* WCBCentralManager.m */,
+				1F4233891BBCF6640073DCAD /* WCBCentralNotificationCenter.m */,
+				1F42338A1BBCF6640073DCAD /* WCBCentralNotifications.m */,
+			);
+			path = WasabiCoreBluetooth;
+			sourceTree = "<group>";
+		};
+		1F4233801BBCF6640073DCAD /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1F4233831BBCF6640073DCAD /* Public */,
+				1F4233811BBCF6640073DCAD /* Private */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		1F4233811BBCF6640073DCAD /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				1F4233821BBCF6640073DCAD /* WCBCentralManager_Private.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		1F4233831BBCF6640073DCAD /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				1F4233841BBCF6640073DCAD /* WasabiCoreBluetooth.h */,
+				1F4233851BBCF6640073DCAD /* WCBCentralManager.h */,
+				1F4233861BBCF6640073DCAD /* WCBCentralNotificationCenter.h */,
+				1F4233871BBCF6640073DCAD /* WCBCentralNotifications.h */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F4233641BBCF5910073DCAD /* WasabiCoreBluetooth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F42336E1BBCF5910073DCAD /* Build configuration list for PBXNativeTarget "WasabiCoreBluetooth" */;
+			buildPhases = (
+				1F4233611BBCF5910073DCAD /* Sources */,
+				1F4233621BBCF5910073DCAD /* Frameworks */,
+				1F4233631BBCF5910073DCAD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WasabiCoreBluetooth;
+			productName = WasabiCoreBluetooth;
+			productReference = 1F4233651BBCF5910073DCAD /* libWasabiCoreBluetooth.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F42335D1BBCF5910073DCAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Roth Michaels";
+				TargetAttributes = {
+					1F4233641BBCF5910073DCAD = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 1F4233601BBCF5910073DCAD /* Build configuration list for PBXProject "WasabiCoreBluetooth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F42335C1BBCF5910073DCAD;
+			productRefGroup = 1F4233661BBCF5910073DCAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F4233641BBCF5910073DCAD /* WasabiCoreBluetooth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F4233611BBCF5910073DCAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F42338D1BBCF6640073DCAD /* WCBCentralNotifications.m in Sources */,
+				1F42338C1BBCF6640073DCAD /* WCBCentralNotificationCenter.m in Sources */,
+				1F42338B1BBCF6640073DCAD /* WCBCentralManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1F42336C1BBCF5910073DCAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F42336D1BBCF5910073DCAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F42336F1BBCF5910073DCAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1F4233701BBCF5910073DCAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F4233601BBCF5910073DCAD /* Build configuration list for PBXProject "WasabiCoreBluetooth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F42336C1BBCF5910073DCAD /* Debug */,
+				1F42336D1BBCF5910073DCAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F42336E1BBCF5910073DCAD /* Build configuration list for PBXNativeTarget "WasabiCoreBluetooth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F42336F1BBCF5910073DCAD /* Debug */,
+				1F4233701BBCF5910073DCAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F42335D1BBCF5910073DCAD /* Project object */;
+}
