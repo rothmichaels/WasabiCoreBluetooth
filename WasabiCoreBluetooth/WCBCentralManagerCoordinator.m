@@ -85,7 +85,7 @@
     dispatch_async([WCBCentralManagerCoordinator bleQueue], ^{
         NSNumber *hash = @([manager hash]);
         wself.scanRequests[hash] = (serviceUUIDs) ?: [NSNull null];
-        wself.scanRequestOptions[hash] = (serviceUUIDs) ?: [NSNull null];
+        wself.scanRequestOptions[hash] = (options) ?: [NSNull null];
         
         [wself updateScanningState];
     });
