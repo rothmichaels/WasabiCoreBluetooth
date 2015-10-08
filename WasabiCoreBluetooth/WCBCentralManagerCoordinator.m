@@ -13,9 +13,9 @@
 
 @interface WCBCentralManagerCoordinator ()
 
-@property (weak,nonatomic) WCBCentralManager *centralManager;
 @property (strong,nonatomic) NSMutableDictionary *scanRequests;
 @property (strong,nonatomic) NSMutableDictionary *scanRequestOptions;
+@property (strong,nonatomic) NSMutableDictionary *connectCount;
 
 - (void)updateScanningState;
 
@@ -58,21 +58,14 @@
     return singleton;
 }
 
-- (instancetype)initWithManager:(WCBCentralManager *)manager
-{
-    if ((self = [super init])) {
-        _centralManager = manager;
-        
-        
-    }
-    return self;
-}
+
 
 - (instancetype)init
 {
     if ((self = [super init])) {
         _scanRequests = [[NSMutableDictionary alloc] init];
         _scanRequestOptions = [[NSMutableDictionary alloc] init];
+        _connectCount = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -140,6 +133,36 @@
     
     [central scanForPeripheralsWithServices:requests
                                     options:@{CBCentralManagerScanOptionAllowDuplicatesKey: @(duplicates)}];
+}
+
+- (void)connectPeripheral:(CBPeripheral *)peripheral options:(NSDictionary *)options
+{
+    WCBCentralManagerCoordinator *__weak ws = self;
+    dispatch_async([WCBCentralManagerCoordinator bleQueue], ^{
+        NSMutableDictionary *connectCounts = ws.connectCount;
+        NSUUID *identifier = peripheral.identifier;
+        NSInteger count = [connectCounts[identifier] integerValue];
+        connectCounts[identifier] = @(count + 1);
+        [[WCBCentralManagerCoordinator sharedCentral] connectPeripheral:peripheral options:options];
+    });
+}
+
+- (void)cancelPeripheralConnection:(CBPeripheral *)peripheral
+{
+    WCBCentralManagerCoordinator *__weak ws = self;
+    dispatch_async([WCBCentralManagerCoordinator bleQueue], ^{
+        NSMutableDictionary *connectCounts = ws.connectCount;
+        NSUUID *identifier = peripheral.identifier;
+        NSInteger count = [connectCounts[identifier] integerValue];
+        if (count == 0) {
+            return;
+        }
+        count = count - 1;
+        connectCounts[identifier] = @(count);
+        if (count == 0) {
+            [[WCBCentralManagerCoordinator sharedCentral] cancelPeripheralConnection:peripheral];
+        }
+    });
 }
 
 #pragma mark - CBCentralManager forwarding

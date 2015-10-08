@@ -205,6 +205,11 @@ typedef void (^NotificationBlock)(NSNotification *);
     [_observers removeAllObjects];
 }
 
+- (void)connectPeripheral:(CBPeripheral *)peripheral options:(NSDictionary *)options
+{
+    
+}
+
 #pragma mark -
 
 - (CBCentralManagerState)state
