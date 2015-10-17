@@ -207,7 +207,12 @@ typedef void (^NotificationBlock)(NSNotification *);
 
 - (void)connectPeripheral:(CBPeripheral *)peripheral options:(NSDictionary *)options
 {
-    
+    [[WCBCentralManagerCoordinator sharedCoordinator] connectPeripheral:peripheral options:options];
+}
+
+- (void)cancelPeripheralConnection:(CBPeripheral *)peripheral
+{
+    [[WCBCentralManagerCoordinator sharedCoordinator] cancelPeripheralConnection:peripheral];
 }
 
 #pragma mark -
