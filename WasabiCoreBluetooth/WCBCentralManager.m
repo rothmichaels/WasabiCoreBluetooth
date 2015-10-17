@@ -71,7 +71,7 @@ typedef void (^NotificationBlock)(NSNotification *);
                 dispatch_queue_t queue = dispatch_get_main_queue();
                 _wrapBlock = ^(NotificationBlock block) {
                     return ^(NSNotification *notification) {
-                        dispatch_sync(queue, ^{
+                        dispatch_async(queue, ^{
                             block(notification);
                         });
                     };

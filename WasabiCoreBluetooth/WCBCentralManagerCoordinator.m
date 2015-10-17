@@ -58,7 +58,15 @@
     return singleton;
 }
 
-
++ (dispatch_queue_t)selfLockQueue
+{
+    static dispatch_queue_t queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = dispatch_queue_create("wcb.centralmanager.coordinator.queue", DISPATCH_QUEUE_SERIAL);
+    });
+    return queue;
+}
 
 - (instancetype)init
 {
@@ -75,7 +83,7 @@
                            requestedBy:(WCBCentralManager *)manager
 {
     WCBCentralManagerCoordinator *__weak wself = self;
-    dispatch_async([WCBCentralManagerCoordinator bleQueue], ^{
+    dispatch_async([WCBCentralManagerCoordinator selfLockQueue], ^{
         NSNumber *hash = @([manager hash]);
         wself.scanRequests[hash] = (serviceUUIDs) ?: [NSNull null];
         wself.scanRequestOptions[hash] = (options) ?: [NSNull null];
@@ -89,7 +97,7 @@
 - (void)stopScanRequestedBy:(WCBCentralManager *)manager
 {
     WCBCentralManagerCoordinator *__weak wself = self;
-    dispatch_async([WCBCentralManagerCoordinator bleQueue], ^{
+    dispatch_async([WCBCentralManagerCoordinator selfLockQueue], ^{
         NSNumber *hash = @([manager hash]);
         [wself.scanRequests removeObjectForKey:hash];
         [wself.scanRequestOptions removeObjectForKey:hash];
@@ -138,7 +146,7 @@
 - (void)connectPeripheral:(CBPeripheral *)peripheral options:(NSDictionary *)options
 {
     WCBCentralManagerCoordinator *__weak ws = self;
-    dispatch_async([WCBCentralManagerCoordinator bleQueue], ^{
+    dispatch_async([WCBCentralManagerCoordinator selfLockQueue], ^{
         NSMutableDictionary *connectCounts = ws.connectCount;
         NSUUID *identifier = peripheral.identifier;
         NSInteger count = [connectCounts[identifier] integerValue];
@@ -150,7 +158,7 @@
 - (void)cancelPeripheralConnection:(CBPeripheral *)peripheral
 {
     WCBCentralManagerCoordinator *__weak ws = self;
-    dispatch_async([WCBCentralManagerCoordinator bleQueue], ^{
+    dispatch_async([WCBCentralManagerCoordinator selfLockQueue], ^{
         NSMutableDictionary *connectCounts = ws.connectCount;
         NSUUID *identifier = peripheral.identifier;
         NSInteger count = [connectCounts[identifier] integerValue];
