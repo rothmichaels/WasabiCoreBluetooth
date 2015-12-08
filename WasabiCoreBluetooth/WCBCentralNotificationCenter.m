@@ -75,14 +75,19 @@ didRetrievePeripherals:(NSArray *)peripherals
                       userInfo:@{WCBCNUserInfoPeripheral: peripheral}];
 }
 
+FOUNDATION_STATIC_INLINE
+NSDictionary *WCBUserInfoWithError(CBPeripheral *peripheral, NSError *error)
+{
+    return [[NSDictionary alloc] initWithObjectsAndKeys:peripheral,WCBCNUserInfoPeripheral, error, WCBCNUserInfoError, nil];
+}
+
 - (void)centralManager:(CBCentralManager *)central
 didFailToConnectPeripheral:(CBPeripheral *)peripheral
                  error:(NSError *)error
 {
     [NSNC postNotificationName:WCBCNDidFailToConnectPeripheral
                         object:central
-                      userInfo:@{WCBCNUserInfoPeripheral: peripheral,
-                                 WCBCNUserInfoError: error}];
+                      userInfo:WCBUserInfoWithError(peripheral, error)];
 }
 
 - (void)centralManager:(CBCentralManager *)central
@@ -91,8 +96,7 @@ didDisconnectPeripheral:(CBPeripheral *)peripheral
 {
     [NSNC postNotificationName:WCBCNDisconnectPeripheral
                         object:central
-                      userInfo:@{WCBCNUserInfoPeripheral: peripheral,
-                                 WCBCNUserInfoError: error}];
+                      userInfo:WCBUserInfoWithError(peripheral, error)];
 }
 
 @end
